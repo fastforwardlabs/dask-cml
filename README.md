@@ -1,6 +1,6 @@
 # Dask on CML
 
-![images/DASK.png]
+![The Dask logo](images/DASK.png)
 
 Run Dask on CML with the workers API.
 
