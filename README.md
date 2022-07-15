@@ -1,4 +1,4 @@
-# Dask on CML
+# Distributed XGBoost with Dask on CML
 
 ![The Dask logo](images/DASK.png)
 
