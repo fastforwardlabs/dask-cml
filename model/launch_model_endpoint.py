@@ -7,7 +7,7 @@ import xgboost as xgb
 
 # Load the model trained in the distributed-xgboost-with-dask-on-cml notebook.
 booster = xgb.Booster(model_file='best-xgboost-model')
-threshold = 0.25
+threshold = 0.35
 
 def predict_fraud(args):
     """
