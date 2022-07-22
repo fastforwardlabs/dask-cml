@@ -1,13 +1,29 @@
-name: Dask
-description: Spin up an on-demand Dask cluster with CML Workers.
+name: Distributed XGBoost with Dask on CML
+description: >-
+    Demonstrates a typical data science workflow for developing a credit card fraud
+    application including how to train a distributed XGBoost model using Dask on CML workers.
 author: Cloudera Inc.
 specification_version: 1.0
 prototype_version: 1.0
-date: "2021-10-29"
-api_version: 1
+date: "2022-07-30"
+
+environment_variables:
+  DEV_MODE:
+    default: False
+    description: >-
+      Flag to indicate if the AMP should run on a 5% sample of the dataset 
+      (True) to facilitate efficient project development or the full dataset (False).
+    required: True
 
 runtimes:
-  - editor: Workbench
-    kernel: Python 3.7
+  - editor: Jupyter
+    kernel: Python 3.9
     edition: Standard
-    version: 2021.09
+
+tasks:
+  - type: run_session
+    name: Install Dependencies
+    script: scripts/install_dependencies.py
+    memory: 2
+    cpu: 1
+
