@@ -26,6 +26,7 @@ This AMP makes use of a sample of the [credit card fraud dataset](https://www.ka
 ├── cdsw-build.sh                       # build script for model endpoint
 ├── requirements.txt
 ├── data                                # directory to hold sample data
+├── model                               # directory to store trained XGBoost models
 ├── notebooks                           # Jupyter notebooks that are the focus of this AMP
 │   ├── dask-intro.ipynb                    
 │   └── distributed-xgboost-with-dask.ipynb 
