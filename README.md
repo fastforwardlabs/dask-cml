@@ -12,7 +12,9 @@ It's important to understand what we mean here, since there are several paradigm
 
 **Memory-constrained.** In this scenario, the data is larger than can comfortably fit into memory and must instead be distributed across the nodes of your cluster. This necessitates distributing your ML model across those same nodes, a feature of ensemble models like XGBoost. This is the type of distributed computing we demonstrate in this notebook. 
 
-Note that the sample data provided with this AMP actually fits comfortably in memory; instead, the notebook is intended to demonstrate the necessary steps should you come across a memory-constrained use case. 
+
+### Data
+This AMP makes use of a sample of the [credit card fraud dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud) curated by the machine learning group at Université Libre de Bruxelles. You can obtain the full dataset by creating a Kaggle account and downloading from the link above. Note that this data sample actually fits comfortably in memory; instead, the notebook is intended to demonstrate the necessary steps should you come across a memory-constrained use case. 
 
 
 ## Project Structure
@@ -23,11 +25,12 @@ Note that the sample data provided with this AMP actually fits comfortably in me
 ├── .project-metadata.yaml              # declarative specification for AMP logic
 ├── cdsw-build.sh                       # build script for model endpoint
 ├── requirements.txt
-├── dask-intro.ipynb                    # Jupyter notebook covering introductory Dask concepts
-├── distributed-xgboost-with-dask.ipynb # Jupyter notebook demonstrating disributed XGBoost with Dask
 ├── data                                # directory to hold sample data
+├── notebooks                           # Jupyter notebooks that are the focus of this AMP
+│   ├── dask-intro.ipynb                    
+│   └── distributed-xgboost-with-dask.ipynb 
 ├── scripts
-│   ├── install_dependencies.py         # commands to install Python package dependencies
+│   ├── install_dependencies.py         
 │   └── predict_fraud.py                # inference script for a model endpoint
 └── utils
     ├── __init__.py
@@ -42,4 +45,4 @@ There are three ways to launch this project on CML:
 2. **As an Applied ML Prototype** - In a CML workspace, click "New Project", add a Project Name, select "AMP" as the Initial Setup option, copy in the repo URL, click "Create Project", click "Configure Project"
 3. **Manual Setup** - In a CML workspace, click "New Project", add a Project Name, select "Git" as the Initial Setup option, copy in the repo URL, click "Create Project". In this case, manual installation of the notebook dependencies is required by adding and running `!pip install -r requirements.txt` in the JupyterLab Notebook.
 
-Once the project has been initialized in a CML workspace, run either the `dask-intro.ipynb` or `distributed-xgboost-with-dask.ipynb` notebooks by starting a Python 3.9+ JupyterLab Session with 1 vCPU / 2 GiB for resourcing.
+Once the project has been initialized in a CML workspace, run either the `notebooks/dask-intro.ipynb` or `notebooks/distributed-xgboost-with-dask.ipynb` notebooks by starting a Python 3.9+ JupyterLab Session with 1 vCPU / 2 GiB for resourcing.
